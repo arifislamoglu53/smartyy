@@ -4,7 +4,7 @@ import duscheImg from '../../../images/dusche.png';
 import badenImg from '../../../images/baden.png';
 import heizungImg from '../../../images/heizung.png';
 import lichtImg from '../../../images/licht.png';
-import energieBackground from '../../../images/energieBackground.png';
+import energieBackground from '../../../images/energieHeader2.png';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -199,7 +199,7 @@ const Energie = () => {
                     </div>
                     <a
                         className="inline-block rounded-full border border-indigo-600 bg-indigo-600 p-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-                        href="#"
+                        href="/pages/ernaehrung"
                     >
                         <span className="sr-only"> Next </span>
                         <svg

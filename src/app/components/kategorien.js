@@ -3,6 +3,14 @@ import energieImg from '../../images/energy2.png';
 import mobilityImg from '../../images/transporte4.png';
 import foodImage from '../../images/foodImg.png';
 import consumeImage from '../../images/consume2.png';
+import energieBackground from '../../images/energieHeader2.png';
+import mobilitaetHeader from '../../images/mobilitaetHeader2.png';
+import ernaehrungHeader from '../../images/foodHeader2.png';
+import konsumHeader from '../../images/konsumHeader.png';
+
+
+
+
 import Image from 'next/image';
 import Link from 'next/link'; // Add this import
 
@@ -21,7 +29,7 @@ const Kategorien = () => {
     <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       <li>
       <Link href="/pages/energie" className="group block overflow-hidden">
-			<Image src={energieImg} alt="Home" className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] bg-gray-400" />
+			<Image src={energieBackground} alt="Home" className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] bg-gray-400" />
         
           <div className="relative bg-white pt-3">
             <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
@@ -32,7 +40,7 @@ const Kategorien = () => {
       </li>
 	  <li>
     <a href="/pages/mobilitaet" className="group block overflow-hidden">
-    <Image src={mobilityImg} alt="Home" className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] bg-gray-400" />
+    <Image src={mobilitaetHeader} alt="Home" className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] bg-gray-400" />
         
           <div className="relative bg-white pt-3">
             <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
@@ -43,7 +51,7 @@ const Kategorien = () => {
       </li>
 	  <li>
     <a href="/pages/ernaehrung" className="group block overflow-hidden">
-    <Image src={foodImage} alt="Home" className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] bg-gray-400" />
+    <Image src={ernaehrungHeader} alt="Home" className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] bg-gray-400" />
         
           <div className="relative bg-white pt-3">
             <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
@@ -54,7 +62,7 @@ const Kategorien = () => {
       </li>
 	  <li>
     <a href="/pages/konsum" className="group block overflow-hidden">
-    <Image src={consumeImage} alt="Home" className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] bg-gray-400" />
+    <Image src={konsumHeader} alt="Home" className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] bg-gray-400" />
         
           <div className="relative bg-white pt-3">
             <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
