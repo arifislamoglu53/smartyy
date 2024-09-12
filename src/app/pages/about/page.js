@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../../components/header';
-import DefaultButton from '@/app/components/defaulbutton';
 
 const Energie = () => {
     return (
