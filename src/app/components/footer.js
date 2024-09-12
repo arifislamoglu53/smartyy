@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
 	return (
 		<footer className="bg-gray-100">
-  <div className="mx-auto mt-1s max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
+  <div className="mx-auto mt-1s max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
     <div className="flex justify-center text-teal-600">
 	<a className="block text-teal-600" href="/">
 		<h1 className="text-2xl font-bold">SmartEnergy</h1>			

@@ -21,7 +21,7 @@ function App() {
         <div className="mx-auto max-w-xl text-center">
           <h1 className="text-3xl font-extrabold sm:text-5xl">
             Werde umweltbewusster.
-            <strong className="font-extrabold text-[#7fcc73] sm:block"> Reduziere Deinen CO2-Fußabdruck. </strong>
+            <strong className="font-extrabold text-teal-600 sm:block"> Reduziere Deinen CO2-Fußabdruck. </strong>
           </h1>
 
           <p className="mt-4 sm:text-xl/relaxed">
@@ -31,15 +31,15 @@ function App() {
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
-              className="block w-full rounded bg-[#acf2a1] px-12 py-3 text-sm font-medium text-white shadow hover:bg-[#acf2a1] focus:outline-none focus:ring active:bg-[#acf2a1] sm:w-auto"
-              href="/kategorien/start"
+              className="block w-full rounded bg-teal-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-teal-600 focus:outline-none focus:ring active:bg-[#acf2a1] sm:w-auto"
+              href="/pages/start"
               onClick={handleClick}
             >
               Jetzt Starten
             </a>
 
             <a
-              className="block w-full rounded px-12 py-3 text-sm font-medium text-black shadow hover:text-[#7fcc73] focus:outline-none focus:ring active:text-red-500 sm:w-auto"
+              className="block w-full rounded px-12 py-3 text-sm font-medium text-black shadow hover:text-teal-600 focus:outline-none focus:ring active:text-red-500 sm:w-auto"
               href="#"
             >
               Mehr erfahren
