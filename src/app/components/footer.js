@@ -10,7 +10,7 @@ const Footer = () => {
 	</a>
     </div>
 
-    <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
+    <p className="mx-auto mt-4 max-w-md text-center leading-relaxed text-gray-500">
 		 Gemeinsam für eine nachhaltigere Zukunft.
     </p>
 

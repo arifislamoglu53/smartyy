@@ -165,57 +165,91 @@ const Ernaehrung = () => {
                         </a>
                     </div>
                 </div>
-                <a
-                    className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4 ml-36 mr-[24rem]"
-                    id='kochenButton'
-                    href="#"
-                >Hinzufügen</a>
-                <a
-                    className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4 ml-4 mr-[16rem]"
-                    id='veganButton'
-                    href="#"
-                >Hinzufügen</a>
-                <a
-                    className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4 ml-28 mr-[16rem]"
-                    id='fleischButton'
-                    href="#"
-                >Hinzufügen</a>
-                <a
-                    className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4 ml-36"
-                    id='mikrowelleButton'
-                    href="#"
-                >Hinzufügen</a>
-                <div className="flex justify-center items-center mt-32">
-                    <h2 className="text-2xl">0 CO₂</h2>
+                <div id='bottonsWrapper' className="flex justify-center space-x-81">
                     <a
-                        className="inline-block rounded bg-[#f36d6d] px-4 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-[#f36d6d] ml-4"
-                        id='resetButton'
+                        className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
+                        id='kochenButton'
                         href="#"
-                    >Zurücksetzen</a>
-                </div>
-                <div className="flex justify-between">
-                    <div className="flex-grow">
-                    </div>
+                    >Hinzufügen</a>
                     <a
+                        className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
+                        id='veganButton'
+                        href="#"
+                    >Hinzufügen</a>
+                    <a
+                        className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
+                        id='fleischButton'
+                        href="#"
+                    >Hinzufügen</a>
+                    <a
+                        className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
+                        id='mikrowelleButton'
+                        href="#"
+                    >Hinzufügen</a>
+                </div>
+                <div id="co2-component" className="flex justify-center items-center mt-2">
+                <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-2 lg:px-8">
+                    <dl className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 justify-center"> {/* Ajustado para centrar un solo elemento */}
+                        <div className="flex flex-col rounded-lg border border-gray-100 px-5 py-6 text-center">
+                        <dt className="order-last text-lg font-medium text-gray-500 mt-4">Gesamter CO2-Ausstoß</dt>
+
+                        <dd className="text-4xl font-extrabold text-blue-600 md:text-4xl">20 kg CO₂</dd>
+                        </div>
+                    </dl>
+                    <div className="flex justify-center"> {/* Añadido para centrar el botón */}
+                        <a
+                            className="inline-block rounded bg-[#f36d6d] px-4 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-[#f36d6d] mt-4"
+                            id='resetButton'
+                            href="#"
+                        >Zurücksetzen</a>
+                    </div>
+                </div>                   
+                </div>
+                <div id='returnNextButtons' className="flex justify-between items-center mb-12"> {/* Cambiado mb-16 a mb-12 */}
+                    <div id='returnButton' className="flex justify-start">
+                        <a
                         className="inline-block rounded-full border border-indigo-600 bg-indigo-600 p-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-                        href="/pages/konsum"
-                    >
-                        <span className="sr-only"> Next </span>
-                        <svg
-                            className="size-5 rtl:rotate-180"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
+                        href="/pages/mobilitaet"
                         >
-                            <path
+                            <span className="sr-only"> Return </span>
+                            <svg
+                                className="size-5 rtl:rotate-180 transform rotate-180"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                                 strokeWidth="2"
                                 d="M14 5l7 7m0 0l-7 7m7-7H3"
-                            />
-                        </svg>
-                    </a>
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                    <div id='nextButton' className="flex justify-end">
+                        <a
+                            className="inline-block rounded-full border border-indigo-600 bg-indigo-600 p-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
+                            href="/pages/konsum"
+                        >
+                            <span className="sr-only"> Next </span>
+                            <svg
+                                className="size-5 rtl:rotate-180"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div>
