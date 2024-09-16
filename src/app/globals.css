@@ -61,3 +61,11 @@ body {
 .animate-slide-out {
   animation: slideOut 0.7s forwards;
 }
+
+.energie-hidden {
+  display: none; /* Oculta el componente visualmente */
+}
+
+.hidden {
+  display: none; /* Oculta el componente visualmente */
+}

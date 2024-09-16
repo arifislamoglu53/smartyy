@@ -1,5 +1,6 @@
 "use client"
-import React from 'react';
+import React from 'react'; 
+import { CO2Provider, useCO2Context } from '@/app/context/CO2Context'; // Importa el contexto
 import duscheImg from '../../../images/dusche.png';
 import badenImg from '../../../images/baden.png';
 import heizungImg from '../../../images/heizung.png';
@@ -10,12 +11,11 @@ import { useRouter } from 'next/navigation';
 
 const Energie = () => {
     const router = useRouter();
+    const { co2Value, incrementCO2, resetCO2 } = useCO2Context(); // Usa el contexto
 
     return (
         <div>
-            <header 
-                className="relative border-b border-gray-200 h-64 overflow-hidden"
-            >
+            <header className="relative border-b border-gray-200 h-64 overflow-hidden">
                 <div 
                     className="absolute inset-0"
                     style={{ 
@@ -132,9 +132,9 @@ const Energie = () => {
                                 <div className="mt-32 sm:mt-48 lg:mt-64">
                                     <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
                                         <p className="text-sm text-white">
-                                            Das Heizen auf 25°C erhöht den Energieverbrauch und verursacht mehr CO₂-Emissionen.
-                                            Schon das Absenken der Temperatur um 1-2°C kann deinen CO₂-Ausstoß deutlich verringern
-                                            – für ein komfortables Zuhause und eine nachhaltige Zukunft.
+                                            Das Heizen auf 25°C verursacht etwa 290 kg CO₂ pro Monat.
+                                            Senkst du die Temperatur um 1-2°C, kannst du bis zu 29 kg CO₂ pro Monat
+                                            einsparen und gleichzeitig die Umwelt schützen.
                                         </p>
                                     </div>
                                 </div>
@@ -156,9 +156,8 @@ const Energie = () => {
                                 <div className="mt-32 sm:mt-48 lg:mt-64">
                                     <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
                                         <p className="text-sm text-white">
-                                            Eine Stunde Licht verursacht CO-Emissionen, abhängig von der Energiequelle.
-                                            Mit energieeffizienten LED-Lampen kannst du den Stromverbrauch deutlich senken
-                                            und so deinen CO₂-Ausstoß reduzieren – kleine Änderungen, große Wirkung.
+                                            Eine Stunde Licht mit einer herkömmlichen Glühbirne verursacht etwa 0,40 kg CO₂.
+                                            Durch den Einsatz von LED-Lampen kannst du den CO₂-Ausstoß auf etwa 5 g pro Stunde reduzieren.
                                         </p>
                                     </div>
                                 </div>
@@ -170,43 +169,46 @@ const Energie = () => {
                     <a
                         className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
                         id='duscheButton'
-                        href="#"
+                        onClick={() => incrementCO2(2)}
                     >Hinzufügen</a>
                     <a
                         className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
                         id='badenButton'
-                        href="#"
+                        onClick={() => incrementCO2(3)}
                     >Hinzufügen</a>
                     <a
                         className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
                         id='heizungButton'
-                        href="#"
+                        onClick={() => incrementCO2(290)}
                     >Hinzufügen</a>
                     <a
                         className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
                         id='lichtButton'
-                        href="#"
+                        onClick={() => incrementCO2(0.40)}
                     >Hinzufügen</a>
                 </div>
                 <div id="co2-component" className="flex justify-center items-center mt-1">
                 <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-2 lg:px-8">
-                    <dl className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 justify-center"> {/* Ajustado para centrar un solo elemento */}
+                    <dl className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 justify-center">
                         <div className="flex flex-col rounded-lg border border-gray-100 px-5 py-6 text-center">
                         <dt className="order-last text-lg font-medium text-gray-500 mt-4">Gesamter CO2-Ausstoß</dt>
-
-                        <dd className="text-4xl font-extrabold text-blue-600 md:text-4xl">20 kg CO₂</dd>
+                        <dd className="text-4xl font-extrabold text-blue-600 md:text-4xl">
+                            {co2Value} kg CO₂ {/* Muestra el valor de co2Value */}
+                        </dd>
                         </div>
                     </dl>
-                    <div className="flex justify-center"> {/* Añadido para centrar el botón */}
+                    <div className="flex justify-center">
                         <a
                             className="inline-block rounded bg-[#f36d6d] px-4 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-[#f36d6d] mt-2"
-                            id='resetButton'
+                            id="resetButton"
                             href="#"
-                        >Zurücksetzen</a>
-                    </div>
-                </div>                   
+                            onClick={resetCO2}
+                        >
+                            Zurücksetzen
+                        </a>
+                    </div>                   
                 </div>
-                <div id='returnNextButtons' className="flex justify-end items-center mb-12"> {/* Cambiado justify-between a justify-end */}
+                <div id='returnNextButtons' className="flex justify-end items-center mb-12">
                     <div id='nextButton' className="flex">
                         <a
                             className="inline-block rounded-full border border-indigo-600 bg-indigo-600 p-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
@@ -233,6 +235,7 @@ const Energie = () => {
             </div>
             <div>
             </div>
+        </div>
         </div>
     );
 };

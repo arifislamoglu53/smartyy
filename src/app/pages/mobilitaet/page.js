@@ -1,5 +1,6 @@
 "use client"
-import React from 'react';
+import React from 'react'; 
+import { CO2Provider, useCO2Context } from '@/app/context/CO2Context';
 import autoImage from '../../../images/autoImage.png';
 import flugImage from '../../../images/flugImage.png';
 import zugImage from '../../../images/zugImage.png';
@@ -10,6 +11,7 @@ import { useRouter } from 'next/navigation';
 
 const Mobilitaet = () => {
     const router = useRouter();
+    const { co2Value, incrementCO2, resetCO2 } = useCO2Context();
 
     return (
         <div>
@@ -167,43 +169,45 @@ const Mobilitaet = () => {
                     <a
                         className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
                         id='autoButton'
-                        href="#"
+                        onClick={() => incrementCO2(3)}
                     >Hinzufügen</a>
                     <a
                         className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
                         id='flugButton'
-                        href="#"
+                        onClick={() => incrementCO2(250)}
                     >Hinzufügen</a>
                     <a
                         className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
                         id='zugButton'
-                        href="#"
+                        onClick={() => incrementCO2(0.40)}
                     >Hinzufügen</a>
                     <a
                         className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
                         id='schiffButton'
-                        href="#"
+                        onClick={() => incrementCO2(115)}
                     >Hinzufügen</a>
                 </div>
                 <div id="co2-component" className="flex justify-center items-center mt-2">
                 <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-2 lg:px-8">
-                    <dl className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 justify-center"> {/* Ajustado para centrar un solo elemento */}
+                    <dl className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 justify-center">
                         <div className="flex flex-col rounded-lg border border-gray-100 px-5 py-6 text-center">
                         <dt className="order-last text-lg font-medium text-gray-500 mt-4">Gesamter CO2-Ausstoß</dt>
-
-                        <dd className="text-4xl font-extrabold text-blue-600 md:text-4xl">20 kg CO₂</dd>
+                        <dd className="text-4xl font-extrabold text-blue-600 md:text-4xl">
+                            {co2Value} kg CO₂
+                        </dd>
                         </div>
                     </dl>
-                    <div className="flex justify-center"> {/* Añadido para centrar el botón */}
+                    <div className="flex justify-center">
                         <a
-                            className="inline-block rounded bg-[#f36d6d] px-4 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-[#f36d6d] mt-4"
+                            className="inline-block rounded bg-[#f36d6d] px-4 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-[#f36d6d] mt-2"
                             id='resetButton'
                             href="#"
+                            onClick={resetCO2}
                         >Zurücksetzen</a>
                     </div>
-                </div>                   
+                </div>                 
                 </div>
-                <div id='returnNextButtons' className="flex justify-between items-center mb-12"> {/* Cambiado mb-16 a mb-12 */}
+                <div id='returnNextButtons' className="flex justify-between items-center mb-12">
                     <div id='returnButton' className="flex justify-start">
                         <a
                         className="inline-block rounded-full border border-indigo-600 bg-indigo-600 p-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"

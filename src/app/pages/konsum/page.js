@@ -1,5 +1,6 @@
 "use client"
-import React from 'react';
+import React from 'react'; 
+import { CO2Provider, useCO2Context } from '@/app/context/CO2Context'; // Importa el contexto
 import jeansImage from '../../../images/jeansImage.png';
 import tshirtImage from '../../../images/tshirtImage.png';
 import pulloverImage from '../../../images/pulloverImage.png';
@@ -10,6 +11,7 @@ import { useRouter } from 'next/navigation';
 
 const Konsum = () => {
     const router = useRouter();
+    const { co2Value, incrementCO2, resetCO2 } = useCO2Context(); // Usa el contexto
 
     return (
         <div>
@@ -165,42 +167,44 @@ const Konsum = () => {
                 <div id='bottonsWrapper' className="flex justify-center space-x-81">
                     <a
                         className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
-                        id='jeansButton'
-                        href="#"
+                        id='autoButton'
+                        onClick={() => incrementCO2(33)}
                     >Hinzufügen</a>
                     <a
                         className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
-                        id='tshirtButton'
-                        href="#"
+                        id='flugButton'
+                        onClick={() => incrementCO2(2.5)}
                     >Hinzufügen</a>
                     <a
                         className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
-                        id='pulloverButton'
-                        href="#"
+                        id='zugButton'
+                        onClick={() => incrementCO2(5)}
                     >Hinzufügen</a>
                     <a
                         className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
-                        id='accesoireButton'
-                        href="#"
+                        id='schiffButton'
+                        onClick={() => incrementCO2(1)}
                     >Hinzufügen</a>
                 </div>
                 <div id="co2-component" className="flex justify-center items-center mt-2">
                 <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-2 lg:px-8">
-                    <dl className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 justify-center"> {/* Ajustado para centrar un solo elemento */}
+                    <dl className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 justify-center">
                         <div className="flex flex-col rounded-lg border border-gray-100 px-5 py-6 text-center">
                         <dt className="order-last text-lg font-medium text-gray-500 mt-4">Gesamter CO2-Ausstoß</dt>
-
-                        <dd className="text-4xl font-extrabold text-blue-600 md:text-4xl">20 kg CO₂</dd>
+                        <dd className="text-4xl font-extrabold text-blue-600 md:text-4xl">
+                            {co2Value} kg CO₂ {/* Muestra el valor de co2Value */}
+                        </dd>
                         </div>
                     </dl>
-                    <div className="flex justify-center"> {/* Añadido para centrar el botón */}
+                    <div className="flex justify-center">
                         <a
-                            className="inline-block rounded bg-[#f36d6d] px-4 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-[#f36d6d] mt-4"
+                            className="inline-block rounded bg-[#f36d6d] px-4 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-[#f36d6d] mt-2"
                             id='resetButton'
                             href="#"
+                            onClick={resetCO2}
                         >Zurücksetzen</a>
                     </div>
-                </div>                   
+                </div>                       
                 </div>
                 <div id='returnNextButtons' className="flex justify-between items-center mb-12"> {/* Cambiado mb-16 a mb-12 */}
                     <div id='returnButton' className="flex justify-start">
