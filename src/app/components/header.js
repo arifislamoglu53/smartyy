@@ -26,7 +26,10 @@ const Header = () => {
 				  </li>
 		
 				  <li>
-					<a className="text-gray-500 transition hover:text-gray-500/75" href="/pages/dashboard"> Dashboard </a>
+					<a className="text-gray-500 transition hover:text-gray-500/75" href="/pages/result"> Dashboard </a>
+				  </li>
+				  <li>
+					<a className="text-gray-500 transition hover:text-gray-500/75" href="/pages/tutorial"> Tutorial </a>
 				  </li>
 				</ul>
 			  </nav>

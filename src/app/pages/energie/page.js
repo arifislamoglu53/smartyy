@@ -10,8 +10,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const Energie = () => {
-    const router = useRouter();
-    const { co2Value, incrementCO2, resetCO2 } = useCO2Context(); // Usa el contexto
+        const router = useRouter();
+        const { co2Value, incrementCO2, resetCO2 } = useCO2Context(); // Usa el contexto
 
     return (
         <div>
@@ -78,20 +78,27 @@ const Energie = () => {
                                 objectFit="cover"
                                 className="absolute inset-0 h-full w-full opacity-75 transition-opacity group-hover:opacity-50"
                             />
-                            <div className="relative p-4 sm:p-6 lg:p-8">
-                                <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Energie</p>
-                                <p className="text-xl font-bold text-white sm:text-2xl">Duschen 10 Minuten</p>
-                                <div className="mt-32 sm:mt-48 lg:mt-64">
-                                    <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                                        <p className="text-sm text-white">
-                                            Durch eine 10-minütige Dusche werden etwa 2 kg CO₂ freigesetzt. Mit einem sparsamen Duschkopf 
-                                            und kürzeren Duschzeiten kannst du deinen CO₂-Ausstoß erheblich reduzieren
-                                            – ein kleiner Schritt für einen großen Einfluss auf die Umwelt.
-                                        </p>
-                                    </div>
+                        </a>
+                        <div className="relative p-4 sm:p-6 lg:p-8">
+                            <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Energie</p>
+                            <p className="text-xl font-bold text-white sm:text-2xl">Duschen 10 Minuten</p>
+                            <div className="mt-32 sm:mt-48 lg:mt-64">
+                                <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                                    <p className="text-sm text-white">
+                                        Durch eine 10-minütige Dusche werden etwa 2 kg CO₂ freigesetzt. Mit einem sparsamen Duschkopf 
+                                        und kürzeren Duschzeiten kannst du deinen CO₂-Ausstoß erheblich reduzieren
+                                        – ein kleiner Schritt für einen großen Einfluss auf die Umwelt.
+                                    </p>
                                 </div>
                             </div>
-                        </a>
+                        </div>
+                        <div className="relative flex justify-center mt-0"> {/* Botón para Duschen centrado */}
+                            <a
+                                className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 cursor-pointer"
+                                id='duscheButton'
+                                onClick={() => incrementCO2(2)}
+                            >Hinzufügen</a>
+                        </div>
                     </div>
                     <div className="group relative block bg-black mt-12 w-1/4">
                         <a href="#">
@@ -102,20 +109,27 @@ const Energie = () => {
                                 objectFit="cover"
                                 className="absolute inset-0 h-full w-full opacity-75 transition-opacity group-hover:opacity-50"
                             />
-                            <div className="relative p-4 sm:p-6 lg:p-8">
-                                <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Energie</p>
-                                <p className="text-xl font-bold text-white sm:text-2xl">Baden 20 Minuten</p>
-                                <div className="mt-32 sm:mt-48 lg:mt-64">
-                                    <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                                        <p className="text-sm text-white">
-                                            Ein 20-minütiges Bad verursacht etwa 3 kg CO₂. Indem du häufiger duschst oder die 
-                                            Badedauer reduzierst, kannst du deinen CO₂-Fußabdruck deutlich verringern –
-                                            kleine Änderungen machen einen großen Unterschied für die Umwelt.
-                                        </p>
-                                    </div>
+                        </a>
+                        <div className="relative p-4 sm:p-6 lg:p-8">
+                            <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Energie</p>
+                            <p className="text-xl font-bold text-white sm:text-2xl">Baden 20 Minuten</p>
+                            <div className="mt-32 sm:mt-48 lg:mt-64">
+                                <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                                    <p className="text-sm text-white">
+                                        Ein 20-minütiges Bad verursacht etwa 3 kg CO₂. Indem du häufiger duschst oder die 
+                                        Badedauer reduzierst, kannst du deinen CO₂-Fußabdruck deutlich verringern –
+                                        kleine Änderungen machen einen großen Unterschied für die Umwelt.
+                                    </p>
                                 </div>
                             </div>
-                        </a>
+                        </div>
+                        <div className="relative flex justify-center mt-0"> {/* Botón para Baden centrado */}
+                            <a
+                                className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 cursor-pointer"
+                                id='badenButton'
+                                onClick={() => incrementCO2(3)}
+                            >Hinzufügen</a>
+                        </div>
                     </div>
                     <div className="group relative block bg-black mt-12 w-1/4">
                         <a href="#">
@@ -126,20 +140,27 @@ const Energie = () => {
                                 objectFit="cover"
                                 className="absolute inset-0 h-full w-full opacity-75 transition-opacity group-hover:opacity-50"
                             />
-                            <div className="relative p-4 sm:p-6 lg:p-8">
-                                <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Energie</p>
-                                <p className="text-xl font-bold text-white sm:text-2xl">Heizen auf 25°C</p>
-                                <div className="mt-32 sm:mt-48 lg:mt-64">
-                                    <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                                        <p className="text-sm text-white">
-                                            Das Heizen auf 25°C verursacht etwa 290 kg CO₂ pro Monat.
-                                            Senkst du die Temperatur um 1-2°C, kannst du bis zu 29 kg CO₂ pro Monat
-                                            einsparen und gleichzeitig die Umwelt schützen.
-                                        </p>
-                                    </div>
+                        </a>
+                        <div className="relative p-4 sm:p-6 lg:p-8">
+                            <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Energie</p>
+                            <p className="text-xl font-bold text-white sm:text-2xl">Heizen auf 25°C</p>
+                            <div className="mt-32 sm:mt-48 lg:mt-64">
+                                <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                                    <p className="text-sm text-white">
+                                        Das Heizen auf 25°C verursacht etwa 290 kg CO₂ pro Monat.
+                                        Senkst du die Temperatur um 1-2°C, kannst du bis zu 29 kg CO₂ pro Monat
+                                        einsparen und gleichzeitig die Umwelt schützen.
+                                    </p>
                                 </div>
                             </div>
-                        </a>
+                        </div>
+                        <div className="relative flex justify-center mt-4"> {/* Botón para Heizen centrado */}
+                            <a
+                                className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 cursor-pointer"
+                                id='heizungButton'
+                                onClick={() => incrementCO2(290)}
+                            >Hinzufügen</a>
+                        </div>
                     </div>
                     <div className="group relative block bg-black mt-12 w-1/4">
                         <a href="#">
@@ -150,42 +171,27 @@ const Energie = () => {
                                 objectFit="cover"
                                 className="absolute inset-0 h-full w-full opacity-75 transition-opacity group-hover:opacity-50"
                             />
-                            <div className="relative p-4 sm:p-6 lg:p-8">
-                                <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Energie</p>
-                                <p className="text-xl font-bold text-white sm:text-2xl">Licht 1 Stunde</p>
-                                <div className="mt-32 sm:mt-48 lg:mt-64">
-                                    <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                                        <p className="text-sm text-white">
-                                            Eine Stunde Licht mit einer herkömmlichen Glühbirne verursacht etwa 0,40 kg CO₂.
-                                            Durch den Einsatz von LED-Lampen kannst du den CO₂-Ausstoß auf etwa 5 g pro Stunde reduzieren.
-                                        </p>
-                                    </div>
+                        </a>
+                        <div className="relative p-4 sm:p-6 lg:p-8">
+                            <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Energie</p>
+                            <p className="text-xl font-bold text-white sm:text-2xl">Licht 1 Stunde</p>
+                            <div className="mt-32 sm:mt-48 lg:mt-64">
+                                <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                                    <p className="text-sm text-white">
+                                        Eine Stunde Licht mit einer herkömmlichen Glühbirne verursacht etwa 0,40 kg CO₂.
+                                        Durch den Einsatz von LED-Lampen kannst du den CO₂-Ausstoß auf etwa 5 g pro Stunde reduzieren.
+                                    </p>
                                 </div>
                             </div>
-                        </a>
+                        </div>
+                        <div className="relative flex justify-center mt-4"> {/* Botón para Licht centrado */}
+                            <a
+                                className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 cursor-pointer"
+                                id='lichtButton'
+                                onClick={() => incrementCO2(0.40)}
+                            >Hinzufügen</a>
+                        </div>
                     </div>
-                </div>
-                <div id='bottonsWrapper' className="flex justify-center space-x-81">
-                    <a
-                        className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
-                        id='duscheButton'
-                        onClick={() => incrementCO2(2)}
-                    >Hinzufügen</a>
-                    <a
-                        className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
-                        id='badenButton'
-                        onClick={() => incrementCO2(3)}
-                    >Hinzufügen</a>
-                    <a
-                        className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
-                        id='heizungButton'
-                        onClick={() => incrementCO2(290)}
-                    >Hinzufügen</a>
-                    <a
-                        className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 mt-4"
-                        id='lichtButton'
-                        onClick={() => incrementCO2(0.40)}
-                    >Hinzufügen</a>
                 </div>
                 <div id="co2-component" className="flex justify-center items-center mt-1">
                 <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-2 lg:px-8">
