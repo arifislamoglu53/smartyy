@@ -1,18 +1,10 @@
 import React from 'react';
-import energieImg from '../../images/energy2.png';
-import mobilityImg from '../../images/transporte4.png';
-import foodImage from '../../images/foodImg.png';
-import consumeImage from '../../images/consume2.png';
 import energieBackground from '../../images/energieHeader2.png';
 import mobilitaetHeader from '../../images/mobilitaetHeader2.png';
 import ernaehrungHeader from '../../images/foodHeader2.png';
 import konsumHeader from '../../images/konsumHeader.png';
-
-
-
-
 import Image from 'next/image';
-import Link from 'next/link'; // Add this import
+import Link from 'next/link';
 
 const Kategorien = () => {
 	return (

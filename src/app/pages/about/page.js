@@ -47,7 +47,6 @@ const About = () => {
                         </div>
                         <div class="w-full lg:w-8/12 lg:pt-8">
                             <div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-4 shadow-lg rounded-md">
-                                {/* Hier platzieren wir repräsentative Bilder der App und ihrer Funktionen */}
                                 <div class="p-4 pb-6 flex justify-center flex-col items-center">
                                     <Image class="md:block hidden" src={Image3About} alt="Feature 1" />
                                     <Image class="md:hidden block" src={Image3About} alt="Feature 1" />

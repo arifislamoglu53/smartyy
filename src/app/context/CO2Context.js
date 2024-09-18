@@ -2,10 +2,8 @@
 
 import React, { createContext, useState, useEffect, useContext } from "react";
 
-// Crear el contexto
 export const CO2Context = createContext();
 
-// Proveedor del contexto
 export const CO2Provider = ({ children }) => {
   const [co2Value, setCO2Value] = useState(() => {
     const savedValue = localStorage.getItem("co2value");
@@ -31,5 +29,4 @@ export const CO2Provider = ({ children }) => {
   );
 };
 
-// Hook personalizado para usar el contexto
 export const useCO2Context = () => useContext(CO2Context);

@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import resultHeader from '../../../images/resultHeader.png';
-import { CO2Provider, useCO2Context } from '@/app/context/CO2Context'; // Importa el contextos
+import { CO2Provider, useCO2Context } from '@/app/context/CO2Context';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -10,11 +10,9 @@ const Mobilitaet = () => {
     const { co2Value} = useCO2Context();
 
     const gesamtCO2Ausstoss = co2Value;
-    const anzahlTage = 7; // Ejemplo, para un mes
+    const anzahlTage = 7;
     const taeglicherDurchschnitt = gesamtCO2Ausstoss / anzahlTage;
-    const prognostizierteReduktion = 50; // Valor estimado
-    const gesamtCO2NachReduktion = gesamtCO2Ausstoss - prognostizierteReduktion;
-    const durchschnittAndereNutzer = 400; // Promedio de otros usuarios
+    const durchschnittAndereNutzer = 400;
     const vergleichMitAnderen = gesamtCO2Ausstoss - durchschnittAndereNutzer;
 
     return (

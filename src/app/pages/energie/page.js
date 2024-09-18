@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'; 
-import { CO2Provider, useCO2Context } from '@/app/context/CO2Context'; // Importa el contexto
+import { CO2Provider, useCO2Context } from '@/app/context/CO2Context';
 import duscheImg from '../../../images/dusche.png';
 import badenImg from '../../../images/baden.png';
 import heizungImg from '../../../images/heizung.png';
@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 
 const Energie = () => {
         const router = useRouter();
-        const { co2Value, incrementCO2, resetCO2 } = useCO2Context(); // Usa el contexto
+        const { co2Value, incrementCO2, resetCO2 } = useCO2Context();
 
     return (
         <div>
@@ -92,7 +92,7 @@ const Energie = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative flex justify-center mt-0"> {/* Botón para Duschen centrado */}
+                        <div className="relative flex justify-center mt-0">
                             <a
                                 className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 cursor-pointer"
                                 id='duscheButton'
@@ -123,7 +123,7 @@ const Energie = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative flex justify-center mt-0"> {/* Botón para Baden centrado */}
+                        <div className="relative flex justify-center mt-0">
                             <a
                                 className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 cursor-pointer"
                                 id='badenButton'
@@ -154,7 +154,7 @@ const Energie = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative flex justify-center mt-4"> {/* Botón para Heizen centrado */}
+                        <div className="relative flex justify-center mt-4">
                             <a
                                 className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 cursor-pointer"
                                 id='heizungButton'
@@ -184,7 +184,7 @@ const Energie = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative flex justify-center mt-4"> {/* Botón para Licht centrado */}
+                        <div className="relative flex justify-center mt-4">
                             <a
                                 className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 cursor-pointer"
                                 id='lichtButton'
@@ -199,7 +199,7 @@ const Energie = () => {
                         <div className="flex flex-col rounded-lg border border-gray-100 px-5 py-6 text-center">
                         <dt className="order-last text-lg font-medium text-gray-500 mt-4">Gesamter CO2-Ausstoß</dt>
                         <dd className="text-4xl font-extrabold text-blue-600 md:text-4xl">
-                            {co2Value} kg CO₂ {/* Muestra el valor de co2Value */}
+                            {co2Value} kg CO₂
                         </dd>
                         </div>
                     </dl>

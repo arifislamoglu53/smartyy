@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../images/logoSmartEnergy.png';
-import Image from 'next/image'; // Add this import
+import Image from 'next/image';
 
 const Header = () => {
 	return (

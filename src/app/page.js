@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { CO2Provider } from './context/CO2Context';
 
 function App() {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -13,11 +12,11 @@ function App() {
     setIsAnimating(true);
     setTimeout(() => {
       router.push('/pages/tutorial');
-    }, 700); // Duration of the animation
+    }, 700);
   };
 
   return (
-      <div> {/* Added parent div to wrap the section */}
+      <div>
         <section className={`bg-gray-50 ${isAnimating ? 'animate-slide-out' : ''}`}>
           <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
             <div className="mx-auto max-w-xl text-center">
@@ -35,12 +34,12 @@ function App() {
                 <a
                   className="block w-full rounded bg-teal-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-teal-600 focus:outline-none focus:ring active:bg-[#acf2a1] sm:w-auto"
                   href="/pages/tutorial"
-                  onClick={(e) => { // Modificado para redirigir a la página de inicio
+                  onClick={(e) => {
                     e.preventDefault();
                     setIsAnimating(true);
                     setTimeout(() => {
-                      router.push('/pages/tutorial'); // Siempre redirige a la página de inicio
-                    }, 700); // Duración de la animación
+                      router.push('/pages/tutorial');
+                    }, 700);
                   }}
                 >
                   Jetzt Starten
