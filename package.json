@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev & npx next-video sync -w",
     "build": "webpack",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "14.2.8",
+    "next-video": "^1.2.0",
     "react": "^18",
     "react-dom": "^18",
     "react-router-dom": "^5.3.4"

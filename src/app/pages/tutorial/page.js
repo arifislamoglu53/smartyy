@@ -1,15 +1,15 @@
 import React from 'react';
+import Video from 'next-video';
+import introductionVideo from '../../../../videos/introduction.mp4'
 import Header from '../../components/header';
 
 
 const Tutorial = () => {
     return (
       <div>
-            <Header></Header>
-			<div id='videoComponent'>
-				<video width="600" controls>
-					<source src="/videos/introduction.mp4" type="video/mp4" />
-				</video>
+            <Header/>
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '100px' }}> 
+			<Video src={introductionVideo} />;
 			</div>
       </div>
   );

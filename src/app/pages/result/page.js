@@ -7,14 +7,14 @@ import { useRouter } from 'next/navigation';
 
 const Mobilitaet = () => {
     const router = useRouter();
-    const { co2Value, incrementCO2, resetCO2 } = useCO2Context();
+    const { co2Value} = useCO2Context();
 
     const gesamtCO2Ausstoss = co2Value;
-    const anzahlTage = 30; // Ejemplo, para un mes
+    const anzahlTage = 7; // Ejemplo, para un mes
     const taeglicherDurchschnitt = gesamtCO2Ausstoss / anzahlTage;
     const prognostizierteReduktion = 50; // Valor estimado
     const gesamtCO2NachReduktion = gesamtCO2Ausstoss - prognostizierteReduktion;
-    const durchschnittAndereNutzer = 272.3; // Promedio de otros usuarios
+    const durchschnittAndereNutzer = 400; // Promedio de otros usuarios
     const vergleichMitAnderen = gesamtCO2Ausstoss - durchschnittAndereNutzer;
 
     return (
@@ -104,7 +104,9 @@ const Mobilitaet = () => {
 			<div className="flex flex-col rounded-lg bg-blue-50 px-4 py-8 text-center">
 				<dt className="order-last text-lg font-medium text-gray-500">Vergleich mit ähnlichen Nutzern</dt>
 		
-				<dd className="text-4xl font-extrabold text-blue-600 md:text-4xl mb-6">{vergleichMitAnderen.toFixed(2)} kg CO₂</dd>
+				<dd className="text-4xl font-extrabold text-blue-600 md:text-4xl mb-6">
+					{vergleichMitAnderen > 0 ? `+${vergleichMitAnderen.toFixed(2)}` : vergleichMitAnderen.toFixed(2)} kg CO₂
+				</dd>
 			</div>
 			</dl>
 		</div>
