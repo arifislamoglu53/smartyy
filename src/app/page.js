@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { CO2Provider } from './context/CO2Context';
-import Energie from './pages/energie/page';
 
 function App() {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -13,7 +12,7 @@ function App() {
     e.preventDefault();
     setIsAnimating(true);
     setTimeout(() => {
-      router.push('/pages/start');
+      router.push('/pages/tutorial');
     }, 700); // Duration of the animation
   };
 
@@ -35,8 +34,14 @@ function App() {
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <a
                   className="block w-full rounded bg-teal-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-teal-600 focus:outline-none focus:ring active:bg-[#acf2a1] sm:w-auto"
-                  href="/pages/start"
-                  onClick={handleClick}
+                  href="/pages/tutorial"
+                  onClick={(e) => { // Modificado para redirigir a la página de inicio
+                    e.preventDefault();
+                    setIsAnimating(true);
+                    setTimeout(() => {
+                      router.push('/pages/tutorial'); // Siempre redirige a la página de inicio
+                    }, 700); // Duración de la animación
+                  }}
                 >
                   Jetzt Starten
                 </a>

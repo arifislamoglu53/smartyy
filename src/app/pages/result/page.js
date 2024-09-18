@@ -82,7 +82,7 @@ const Mobilitaet = () => {
 			</p>
 			</div>
 		
-			<dl className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 lg:grid-cols-4">
+			<dl className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 lg:grid-cols-3">
 			<div className="flex flex-col rounded-lg bg-blue-50 px-4 py-8 text-center">
 				<dt className="order-last text-lg font-medium text-gray-500">Gesamter CO2-Ausstoß</dt>
 		
@@ -94,13 +94,6 @@ const Mobilitaet = () => {
 		
 				<dd className="text-4xl font-extrabold text-blue-600 md:text-4xl mb-6">{taeglicherDurchschnitt.toFixed(2)} kg CO₂</dd>
 			</div>
-		
-			<div className="flex flex-col rounded-lg bg-blue-50 px-4 py-8 text-center">
-				<dt className="order-last text-lg font-medium text-gray-500">Prognostizierte Reduktion</dt>
-		
-				<dd className="text-4xl font-extrabold text-blue-600 md:text-4xl mb-6">50 kg CO₂</dd>
-			</div>
-		
 			<div className="flex flex-col rounded-lg bg-blue-50 px-4 py-8 text-center">
 				<dt className="order-last text-lg font-medium text-gray-500">Vergleich mit ähnlichen Nutzern</dt>
 		
